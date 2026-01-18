@@ -19,11 +19,14 @@ export class TasksService {
     return created;
   }
 
-  remove(id: number): void {
-    this.tasks = this.tasks.filter((t) => t.id !== id);
+  markCompleted(id: number): void {
+    const task = this.tasks.find(t => t.id === id);
+    if (task) {
+      task.completada = !task.completada; 
+    }
   }
 
-  toggleCompleted(id: number): void {
-    this.tasks = this.tasks.map((t) => (t.id === id ? { ...t, completada: !t.completada } : t));
+  remove(id: number): void {
+    this.tasks = this.tasks.filter(t => t.id !== id);
   }
 }
