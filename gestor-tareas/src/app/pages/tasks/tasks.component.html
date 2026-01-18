@@ -9,10 +9,33 @@
         <li class="item">
           <div>
             <strong>{{ t.titulo }}</strong>
-            @if (t.descripcion) { <div class="muted">{{ t.descripcion }}</div> }
+            @if (t.descripcion) {
+              <div class="muted">{{ t.descripcion }}</div>
+            }
           </div>
 
           <button class="btn btn-ghost" (click)="remove(t.id)">Eliminar</button>
+        </li>
+        <li class="item">
+          <div [class.done]="t.completada">
+            <strong>{{ t.titulo }}</strong>
+            @if (t.descripcion) {
+              <div class="muted">{{ t.descripcion }}</div>
+            }
+          </div>
+
+          <div class="actions">
+            <button
+              class="btn btn-sm"
+              [class.btn-success]="!t.completada"
+              [class.btn-ghost]="t.completada"
+              (click)="toggle(t.id)"
+            >
+              {{ t.completada ? 'Reabrir' : 'Completar' }}
+            </button>
+
+            <button class="btn btn-ghost" (click)="remove(t.id)">Eliminar</button>
+          </div>
         </li>
       }
     </ul>

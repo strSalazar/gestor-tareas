@@ -13,4 +13,8 @@ export class TasksComponent {
   remove(id: number) {
     this.tasksService.remove(id);
   }
+
+  toggle(id: number) {
+    this.tasksService.toggleCompleted(id);
+  }
 }

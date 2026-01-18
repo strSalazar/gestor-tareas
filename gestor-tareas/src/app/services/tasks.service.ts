@@ -22,4 +22,8 @@ export class TasksService {
   remove(id: number): void {
     this.tasks = this.tasks.filter((t) => t.id !== id);
   }
+
+  toggleCompleted(id: number): void {
+    this.tasks = this.tasks.map((t) => (t.id === id ? { ...t, completada: !t.completada } : t));
+  }
 }

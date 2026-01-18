@@ -17,3 +17,23 @@
   font-size: .95rem;
   margin-top: 4px;
 }
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.btn-success {
+  background-color: #10b981;
+  color: white;
+}
